@@ -1,17 +1,17 @@
 {
-    "TrainingJobName": "your-training-job-name",
+    "TrainingJobName": "sagemaker-training-job",
     "AlgorithmSpecification": {
-        "TrainingImage": "683313688378.dkr.ecr.us-west-2.amazonaws.com/sagemaker-scikit-learn:0.23-1-cpu-py3",  # Scikit-Learn container URI
+        "TrainingImage": "683313688378.dkr.ecr.us-east-1.amazonaws.com/sagemaker-scikit-learn:0.23-1-cpu-py3",
         "TrainingInputMode": "File"
     },
-    "RoleArn": "arn:aws:iam::YOUR_ACCOUNT_ID:role/YOUR_SAGEMAKER_ROLE",  # Replace with your SageMaker IAM role
+    "RoleArn": "arn:aws:iam::506236563550:role/SageMakerExecutionRole",
     "InputDataConfig": [
         {
             "ChannelName": "training",
             "DataSource": {
                 "S3DataSource": {
                     "S3DataType": "S3Prefix",
-                    "S3Uri": "s3://your-bucket-name/data/",  # Replace with your S3 data location
+                    "S3Uri": "s3://sagemaker-artifacts-sample/data/",
                     "S3DataDistributionType": "FullyReplicated"
                 }
             },
@@ -19,7 +19,7 @@
         }
     ],
     "OutputDataConfig": {
-        "S3OutputPath": "s3://your-bucket-name/model/"  # Replace with your S3 output location
+        "S3OutputPath": "s3://sagemaker-artifacts-sample/model/"
     },
     "ResourceConfig": {
         "InstanceType": "ml.m5.large",
