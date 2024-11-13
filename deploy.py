@@ -5,10 +5,10 @@ import boto3
 
 # Initialize SageMaker session and role
 sagemaker_session = sagemaker.Session()
-role = "arn:aws:iam::YOUR_ACCOUNT_ID:role/YOUR_SAGEMAKER_ROLE"  # Replace with your SageMaker IAM role
+role = "arn:aws:iam::506236563550:role/SageMakerExecutionRole"  # SageMaker role
 
 # S3 path to the model artifact (set by the training job)
-model_data = "s3://your-bucket-name/model/model.tar.gz"  # Replace with your actual S3 path
+model_data = "s3://sagemaker-artifacts-sample/model/model.tar.gz"  # S3 URI of the model artifacts
 
 # Create the SKLearnModel object
 sklearn_model = SKLearnModel(
