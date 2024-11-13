@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--model-dir", type=str, default="/opt/ml/model")  # Where SageMaker saves the model
+    parser.add_argument("--model-dir", type=str, default="/opt/ml/model")  # SageMaker default model directory
     args = parser.parse_args()
 
     # Load and split dataset
