@@ -14,7 +14,7 @@ phases:
     commands:
       # Start SageMaker training job
       - aws sagemaker create-training-job --cli-input-json file://training-job-config.json
-      - aws sagemaker wait training-job-completed-or-stopped --training-job-name your-training-job-name  # Replace with training job name
+      - aws sagemaker wait training-job-completed-or-stopped --training-job-name sagemaker-training-job
   post_build:
     commands:
       # Deploy the trained model to an endpoint
